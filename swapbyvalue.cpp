@@ -1,31 +1,36 @@
 #include <iostream>
 using namespace std;
 
-void swapbyvalue (int a, int b) {
+// Swap by Value
+void swapByValue(int a, int b) {
     int temp = a;
-    a=b;
-    b= temp;
-    cout << "inside swapbyvalue function a and b are " << a << " " << b << endl;
-
-}
-
-void swapbyreference (int &a, int &b) {
-    int temp = a;
-    a =b;
+    a = b;
     b = temp;
-    cout << "inside swapbyreference function a and b are " << a << " "<< b << endl;
 
+    cout << "Inside swapByValue: a = " << a << " b = " << b << endl;
 }
-int main( ){
-    int a,b;
-    cout << " enter two numbers:";
+
+// Swap by Reference
+void swapByReference(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+
+    cout << "Inside swapByReference: a = " << a << " b = " << b << endl;
+}
+
+int main() {
+    int a, b;
+
+    cout << "Enter two numbers: ";
     cin >> a >> b;
+
     cout << "\nBefore swapByValue: a = " << a << " b = " << b << endl;
-    swapbyvalue(a, b);
+    swapByValue(a, b);
     cout << "After swapByValue: a = " << a << " b = " << b << endl;
 
     cout << "\nBefore swapByReference: a = " << a << " b = " << b << endl;
-    swapbyreference(a, b);
+    swapByReference(a, b);
     cout << "After swapByReference: a = " << a << " b = " << b << endl;
 
     return 0;
